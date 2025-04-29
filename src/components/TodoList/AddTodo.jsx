@@ -27,12 +27,14 @@ export default function AddTodo({ addTodo }) {
   return (
     <form onSubmit={handleSubmit} className="add-todo">
       <div className="input-group">
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Add a new todo..."
-        />
+        <div className="text-input-container">
+          <input
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Add a new todo..."
+          />
+        </div>
         
         <button 
           type="button"
@@ -44,7 +46,10 @@ export default function AddTodo({ addTodo }) {
       </div>
       
       <div className="reminder-section">
-        <Clock size={16} />
+        <div className="reminder-label">
+          <Clock size={16} />
+          <span>Set reminder</span>
+        </div>
         <input
           type="datetime-local"
           value={reminder}

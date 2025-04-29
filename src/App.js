@@ -62,8 +62,8 @@ export default function App() {
         toggleTheme={toggleTheme} 
       />
       
-      <main style={{ flex: 1, padding: '2rem', overflowY: 'auto' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <main className="main-content">
+        <div className="container">
           <AddTodo addTodo={addTodo} />
           <TodoList
             todos={todos}

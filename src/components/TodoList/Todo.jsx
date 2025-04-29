@@ -34,19 +34,20 @@ export default function Todo({ todo, toggleComplete, deleteTodo, toggleImportant
 
   return (
     <div className={`todo-card ${todo.completed ? 'completed' : ''} ${todo.isImportant ? 'important' : ''}`}>
-      {/* Rest of the component remains the same */}
       <div className="todo-header">
-        <button 
-          className={`complete-btn ${todo.completed ? 'checked' : ''}`}
-          onClick={() => toggleComplete(todo.id)}
-          aria-label={todo.completed ? 'Mark as incomplete' : 'Mark as complete'}
-        >
-          {todo.completed && <Check size={14} />}
-        </button>
-        
-        <h3 onClick={() => setIsExpanded(!isExpanded)} style={{ cursor: 'pointer' }}>
-          {todo.text}
-        </h3>
+        <div className="todo-main-content">
+          <button 
+            className={`complete-btn ${todo.completed ? 'checked' : ''}`}
+            onClick={() => toggleComplete(todo.id)}
+            aria-label={todo.completed ? 'Mark as incomplete' : 'Mark as complete'}
+          >
+            {todo.completed && <Check size={14} />}
+          </button>
+          
+          <h3 onClick={() => setIsExpanded(!isExpanded)} style={{ cursor: 'pointer' }}>
+            {todo.text}
+          </h3>
+        </div>
         
         <div className="todo-actions">
           <button 
